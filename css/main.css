@@ -1,0 +1,514 @@
+
+/* ============================
+Documentation :::
+    -Template name: Litore House;
+    -Template type: Hotel;
+    -Benefits of Site: Fully Responsive, Cross-browser support, made with bootstrap, Mobile-first design, easily read and editable code.
+    -Technology Used: HTML5, CSS3, Javascript, jQuery, Bootstrap.
+    -Fonts Used: Google fonts from https://fonts.google.com
+    -Icons used: Font Awesome 5 from https://fontawesome.com
+    -Plugins used: 
+
+CSS Index :::
+    -base CSS
+    -preloader CSS
+    -hero-area CSS
+    -main section CSS
+    -footer CSS
+    -responsive CSS
+
+==============================*/
+
+
+/* base CSS */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0b4f6c;
+}
+::-webkit-scrollbar-thumb {
+    background: #fbfbff; 
+    border-radius: 10px;
+  }
+::selection {
+    background: #0b4f6c;
+    color: #fcfdfc;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    background: #fbfbff;
+    color: #fbfbff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+}
+span, p, ul, ol, h1, h2, h3, h4, h5, h6, textarea, select, button, input {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 0;
+}
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.on-focus-shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 997;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.on-focus-shade.active {
+    visibility: visible;
+    opacity: 1;
+}
+.primary-btn {
+    background: #fbfbff;
+    color: #0b4f6c;
+    display: inline-block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.primary-btn:hover {
+    background: rgba(251, 251, 255, 0.9);
+    color: #0b4f6c;
+}
+.secondary-btn {
+    background: #0b4f6c;
+    color: #fbfbff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.secondary-btn:hover {
+    background: #0b4f6cd2;
+}
+.body-wrapper {
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+
+/* preloader CSS */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: #fbfbff;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.6s cubic-bezier(.83,0,0,.83);
+}
+.loader-contain {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%) scale(0.8);
+}
+
+
+/* hero-area CSS */
+.hero-area {
+    height: calc(100vh - 20px);
+    background: #0b4f6c url("../images/home-hero-bg.jpg") no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+header {
+    position: relative;
+}
+.main-logo {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    transition: all 0.3s ease-in-out;
+}
+.main-logo:hover {
+    background: #fbfbff;
+}
+.main-logo a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fbfbff;
+    transition: color 0.3s ease-in-out;
+}
+.main-logo:hover a,
+.main-logo:hover a i {
+    color: #0b4f6c;
+}
+.main-logo a i {
+    color: #fbfbff;
+    transition: color 0.3s ease-in-out;
+} 
+.menu-trigger {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 25px;
+    padding: 10px 20px;
+    background: #fbfbff;
+    color: #0b4f6c;
+    border: thin solid rgba(117,117,117,0.1);
+    cursor: pointer;
+    z-index: 990;
+    transition: all 0.2s ease-in-out;
+}
+.menu-btn i {
+    transition: all 0.2s ease;
+}
+.menu-trigger:active .menu-btn i {
+    transform: rotateX(60deg);
+}
+.main-menu {
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fbfbff;
+    z-index: 990;
+    visibility: hidden;
+    opacity: 0;
+    box-sizing: border-box;
+    transition: all 0.6s cubic-bezier(.83,0,0,.83);
+}
+.main-menu.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 0;
+}
+.main-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: #0b4f6c;
+    cursor: pointer;
+}
+.close-btn i {
+    color: #757575;
+    transition: all 0.2s ease;
+}
+.close-btn:hover i {
+    color: #0b4f6c;
+}
+.main-menu .menu-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: -webkit-center;
+}
+.menu-links a {
+    display: table;
+    color: #757575;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.menu-links a:hover {
+    color: #0b4f6c;
+    transform: scale(1.1);
+}
+.menu-show-book-now {
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+}
+.hero-text h5 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: -20px;
+}
+.hero-text h1 {
+    font-weight: bold;
+    font-size: 5rem;
+}
+.hero-text h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgba(251, 251, 255, 0.8);
+    margin-top: -10px;
+}
+.hero-text a {
+    margin-top: 30px;
+}
+.hero-text a:last-child {
+    margin: inherit;
+}
+.book-now {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+    padding: 30px 0;
+    background: #fbfbff;
+    color: #0b4f6c;
+    border: 10px solid rgb(117, 117, 117);
+    z-index: 998;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(.83,0,0,.13);
+}
+.book-now.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.book-now-close {
+    position: absolute;
+    display: inline-block;
+    top: -60px;
+    right: 0;
+    color: #fbfbff;
+    font-size: 30px;
+    cursor: pointer;
+}
+.book-now h5 {
+    display: block;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.book-now form input {
+    display: block;
+    background: rgba(117,117,117,0.1);
+    width: 60%;
+    margin: 10px 20%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+.book-now form input[type=submit] {
+    background: #0b4f6c;
+    color: #fbfbff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.book-now form input[type=submit]:hover {
+    color: #fbfbff;
+    background: #0b4f6cd2;
+}
+
+
+/* main section CSS */
+main {
+    padding-top: 10px;
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
+}
+.about, .gallery, .dishes, .blog, .foodies, .activities {
+    position: relative;
+    z-index: 1;
+}
+.about::after, .gallery::after, .dishes::after, .blog::after, .foodies::after, .activities::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+.about {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 2;
+}
+.gallery {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    height: 100%;
+}
+.gallery .bg-img img {
+    height: 100%;
+}
+.dishes {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.blog {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.foodies {
+    grid-column: 2 / 4;
+    grid-row: 3 / 3;
+}
+.activities {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+.section-head-text {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.section-head-text h4 {
+    text-transform: uppercase;
+}
+.section-head-text h2 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+.section-head-text a {
+    margin-top: 30px;
+}
+.bg-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.bg-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: middle center;
+}
+
+
+/* footer CSS */
+footer {
+    color: #0b4f6c;
+    margin-top: 10px;
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+}
+.footer-logo { 
+    margin: 10px;
+    display: inline-block;
+}
+.footer-logo a {
+    color: #0b4f6c;
+    font-size: 30px;
+    font-weight: bold;
+}
+.footer-links {
+    margin-left: auto;
+    text-align: right;
+}
+.social-links {
+    margin-bottom: 10px;
+}
+.social-links a {
+    margin: 5px;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    color: #fbfbff;
+    background: #0b4f6c;
+    display: inline-block;
+}
+
+
+/* responsive CSS */
+/* for mobile phones */
+@media screen and (max-width: 480px) {
+     
+    .main-logo {
+        margin: 10px 0 0 10px;
+    }
+    .menu-trigger, .main-logo a {
+        padding: 5px 15px;
+    }
+    .menu-trigger {
+        top: 20px;
+        right: 20px;
+    }
+    .hero-text h5 {
+        display: none;
+    }
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    .hero-text a:last-child {
+        display: none;
+    }
+    .book-now form input {
+        width: 90%;
+        margin: 10px 5%;
+    }
+    footer {
+        display: block;
+    }
+    .footer-logo {
+        display: block;
+        text-align: center;
+    }
+    .footer-links {
+        text-align: center;
+    }
+}
+
+
+/* for tablet devices */
+@media screen and (max-width: 768px) {
+    
+    .book-now {
+        min-width: 80%;
+    }
+    main {
+        display: block;
+    }
+    .gallery, .dishes, .blog, .foodies, .activities {
+        margin-top: 10px;
+    }
+}

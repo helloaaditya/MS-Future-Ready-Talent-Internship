@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Litore House | Gallery</title>
+
+    <!-- required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="language" content="English">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="Litore House | The Perfect Hotel">
+    <meta name="description" content="">
+    <meta name="keywords" content="...">
+    <meta name="author" content="...">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 days">
+    <meta name="creationdate" content="May 11, 2019">
+    <meta name="distribution" content="global">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    
+    <!-- Font Awesome 5 Free -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    <!--ninja slider stylesheets-->
+    <link rel="stylesheet" href="../css/ninja-slider.css">
+
+    <!-- required stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+<body>
+    
+    <!-- Preloader markup -->
+    <div class="preloader" id="preloader">
+        <div class="loader-contain">
+            <img src="../images/Spinner-1s-200px.gif" alt="Loading">
+        </div>
+    </div>
+
+    <!-- preloader javascript -->
+    <script>
+        var overlay = document.getElementById("preloader");
+        window.addEventListener('load', function(){
+            overlay.style.visibility = 'hidden';
+            overlay.style.opacity = '0';
+        })
+    </script>
+
+    <div class="on-focus-shade"></div> <!-- for the bg shade-->
+    
+    <!-- body wrapper -->
+    <div class="body-wrapper">
+
+        <div class="hero-area">
+            <header>
+                <div class="main-logo">
+                    <a href="../index.html"><i class="fab fa-avianex"></i> Litore</a>
+                </div>
+
+                <div class="menu-trigger">
+                    <span class="menu-btn"><i class="fas fa-bars"></i></span>
+                </div>
+
+                <div class="main-menu">
+                    <span class="close-btn"><i class="fas fa-times"></i></span>
+                    <div class="menu-links">
+                        <a href="../index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="contact.html">Contact</a>
+                        <span class="secondary-btn menu-show-book-now">Book Now!</span>
+                    </div>
+                </div> <!-- /main-menu -->
+            </header>
+
+            <div class="hero-text">
+                <h5>Litore House</h5>
+                <h1>Gallery</h1>
+                <h3>Art of letting go</h3>
+
+                <a href="#" class="primary-btn show-book-now">Book Now!</a>
+                <a href="#main" class="primary-btn">Explore</a>
+            </div>
+
+            <div class="book-now">
+                <h5>Book a place</h5>
+                <span class="book-now-close" title="close"><i class="fas fa-times"></i></span>
+                
+                <form action="index.html">
+                    <input type="date" name="checkin">
+                    <input type="date" name="checkout">
+                    <input type="number" name="guest" placeholder="Number of guests..">
+                    <input type="number" name="phone" placeholder="Phone number..">
+                    <input type="submit" value="Check Availability" title="Check availability on selected date">
+                </form>
+            </div>
+        </div> <!-- /hero-area -->
+
+        <main id="main">
+            <div style="display:none">
+		        <div id="ninja-slider">
+		            <div class="slider-inner">
+		                <ul>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                    <li><a class="ns-img" href="../images/3.jpg"></a></li>
+		                </ul>
+		                <div id="fsBtn" class="fs-icon" title="Close"></div>
+		            </div>
+		        </div>
+			</div>
+
+		    <div class="gallery-wrap">
+		        <img src="../images/3.jpg" onclick="lightbox(0)">
+		        <img src="../images/3.jpg" onclick="lightbox(1)">
+		        <img src="../images/3.jpg" onclick="lightbox(2)">
+		        <img src="../images/3.jpg" onclick="lightbox(3)">
+		        <img src="../images/3.jpg" onclick="lightbox(4)">
+		        <img src="../images/3.jpg" onclick="lightbox(5)">
+		        <img src="../images/3.jpg" onclick="lightbox(6)">
+		        <img src="../images/3.jpg" onclick="lightbox(7)">
+		        <img src="../images/3.jpg" onclick="lightbox(8)">
+		        <img src="../images/3.jpg" onclick="lightbox(9)">
+		        <img src="../images/3.jpg" onclick="lightbox(10)">
+		        <img src="../images/3.jpg" onclick="lightbox(11)">
+		    </div>
+            
+        </main>
+
+        <footer>
+            <div class="footer-logo">
+                <a href="../index.html"><i class="fab fa-avianex"></i> Litore</a>
+            </div>
+
+            <div class="footer-links">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+
+                <div class="copyright">&copy;2019. All Rights Reserved.</div>
+            </div>
+        </footer>
+
+    </div> <!-- body-wrapper ends -->
+
+    <!-- required scripts -->
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!--ninja slider stylesheets-->
+    <script src="../js/ninja-slider.js"></script>
+    <!-- main javascript -->
+    <script src="../js/main.js"></script>
+    
+</body>
+</html>

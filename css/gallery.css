@@ -1,0 +1,59 @@
+
+/* ============================
+
+CSS Index :::
+    -hero-area CSS
+    -main section CSS
+    -responsive CSS
+
+==============================*/
+
+
+/* hero-area CSS */
+.hero-area {
+    background: #0b4f6c url("../images/3.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* main section CSS */
+main {
+    display: block;
+}
+.gallery-wrap {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+.gallery-wrap img {
+    min-height: 360px;
+    min-width: 220px;
+    cursor: pointer;
+    box-sizing: border-box;
+    filter: grayscale(50%);
+    transition: all 0.3s ease-in-out;
+}
+.gallery-wrap img:hover {
+    filter: grayscale(0%);
+}
+
+
+
+/* responsive CSS */
+/* for tablet devices */
+@media screen and (max-width: 768px) {
+    
+    .gallery-wrap {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+/* for smaller devices */
+@media screen and (max-width: 480px) {
+
+    .gallery-wrap {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
